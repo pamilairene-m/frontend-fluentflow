@@ -23,13 +23,14 @@ const PublicSpeakingApp = () => {
    
  const getAIResponse = async (endpoint, data) => {
   try {
-    const response = await axios.post(`http://localhost:5000/api/public-speaking/${endpoint}`, data);
+    const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/public-speaking/${endpoint}`, data);
     return response.data;
   } catch (err) {
     console.error("API Error:", err);
     throw new Error('Failed to get AI response. Please try again.');
   }
 };
+
 
 const generateOutline = async (topic) => {
   if (!topic.trim()) return;

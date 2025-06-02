@@ -156,7 +156,7 @@ const nextChallenge = async () => {
     try {
       const token = localStorage.getItem('token');
       await axios.post(
-        'http://localhost:5000/api/score/save',
+        `${import.meta.env.VITE_API_URL}/api/score/save`,
         {
           gameId: activeGame.id,
           level: currentLevel,
