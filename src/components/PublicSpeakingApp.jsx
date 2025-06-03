@@ -48,7 +48,7 @@ const generateOutline = async (topic) => {
 };
 
 const fetchSynonyms = async (word) => {
-  if (!word.trim()) return;A
+  if (!word.trim()) return;
 
   setIsLoading(true);
   setError('');
